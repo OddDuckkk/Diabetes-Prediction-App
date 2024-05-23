@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Diabetes Prediction</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #4B8EC3;">
+        Diabetes Prediction
+    </nav>
+    <div class="text-center mb-4">
+        <h3>Please Fill This Form</h3>
+     </div>
+     <div class="container d-flex justify-content-center">
+        <form action="/predict" method="post" style="width:50vw; min-width:300px;">
+           <div class="row mb-3">
+              <div class="col">
+                 <label class="form-label">Age:</label>
+                 <input type="text" class="form-control" name="Age" required maxlength="3" pattern="[0-9]+" title="Age can't be represented by alphabet">
+              </div>
+            
+              <div class="col">
+                <label class="form-label">Sex:</label>
+                <select class="form-select" name="Sex" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Choose your gender</option>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                  </select>
+              </div>
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">High Cholesterol:</label>
+                <select class="form-select" name="HighChol" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you have a high cholesterol?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Cholesterol Check:</label>
+                <select class="form-select" name="CholCheck" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Have you had a cholesterol check in the past 5 years?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Body Mass Index:</label>
+                <input type="text" class="form-control" name="BMI" required maxlength="2" pattern="[0-9]+" title="BMI can't be represented by alphabet">
+             </div>
+
+             <div class="mb-3">
+                <label class="form-label">Smoker:</label>
+                <select class="form-select" name="Smoker" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Have you smoked at least 100 cigarettes in your entire life?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Heart Disease or Attack:</label>
+                <select class="form-select" name="HeartDiseaseorAttack" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Have you experienced coronary heart disease (CHD) or myocardial infarction (MI)?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Physical Activity:</label>
+                <select class="form-select" name="PhysActivity" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Have you had any physical activity in the past 30 days?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Fruit Consumption:</label>
+                <select class="form-select" name="Fruits" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you consume fruit 1 or more times per day?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Vegetable Consumption:</label>
+                <select class="form-select" name="Veggies" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you consume vegetable 1 or more times per day?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Heavy Alcohol Consumption:</label>
+                <select class="form-select" name="HvyAlcoholConsump" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you heavily consume alcohol?  (14 drinks/week for men 7 drinks/week for women)</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">General Health:</label>
+                <select class="form-select"name="GenHlth"  aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Rate your general health</option>
+                    <option value="1">Excellent</option>
+                    <option value="2">Very Good</option>
+                    <option value="3">Good</option>
+                    <option value="2">Fair</option>
+                    <option value="2">Very Good</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Mental Health:</label>
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="typeNumber">How many days of poor mental health? 0-30 days</label>
+                    <input name="MentHlth" min="0" max="30" type="number" id="typeNumber" class="form-control" title="Can't be more than 30 days"> 
+                </div>
+             </div>
+
+             <div class="mb-3">
+                <label class="form-label">Physical Health:</label>
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="typeNumber">How many days since physical ilness or injury? 0-30 days</label>
+                    <input name="PhysHlth" min="0" max="30" type="number" id="typeNumber" class="form-control" title="Can't be more than 30 days"> 
+                </div>
+             </div>
+            
+             <div class="mb-3">
+                <label class="form-label">Difficulty Walking:</label>
+                <select class="form-select" name="DiffWalk" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you have serious difficulty walking or climbing stairs?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Stroke:</label>
+                <select class="form-select" name="Stroke" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you ever had a stroke?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">High Blood Pressure:</label>
+                <select class="form-select" name="HighBP" aria-label=".form-select-lg example">
+                    <option selected class="text-muted">Do you have a high blood pressure?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Predict</button>
+
+              <div></div>
+
+    <!-- Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
