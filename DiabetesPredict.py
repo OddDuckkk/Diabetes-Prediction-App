@@ -2,13 +2,13 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import pandas as pd
-import gzip
+import joblib
 from pandas import DataFrame
 
 # Load the machine learning model and transformers
 # model1 = pickle.load(open('RFRFE.pkl', 'rb'))
-with gzip.open('RFRFE.pkl.gz', 'rb') as file:
-    model1 = pickle.load(file)
+with open('ComRFRFE.pkl', 'rb') as file:
+    model1 = joblib.load(file)
 model2 = pickle.load(open('RFKBEST.pkl', 'rb'))
 quantile = pickle.load(open('quantile.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
