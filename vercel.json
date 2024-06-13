@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+        {"src": "DiabetesPredict.py", "use": "@vercel/python"}
+    ],
+    "routes": [
+        {"src": "/(.*)", "dest": "DiabetesPredict.py"}
+    ]
+}
